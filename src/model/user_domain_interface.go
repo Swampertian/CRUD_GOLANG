@@ -10,7 +10,7 @@ type UserDomainInterface interface {
 	GetID() string
 	SetID(string)
 	EncryptPassword()
-	GenerateToken() (String, *rest_err.RestErr)
+	GenerateToken() (string, *rest_err.RestErr)
 }
 
 func NewUserDomain(
