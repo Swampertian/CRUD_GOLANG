@@ -27,7 +27,7 @@ func init() {
 	}
 }
 
-func ValidateUserErro(
+func ValidateUserError(
 	validation_err error,
 ) *rest_err.RestErr {
 
