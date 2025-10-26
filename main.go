@@ -2,12 +2,13 @@ package main
 
 import (
 	"context"
+	"log"
+
+	"github.com/Swampertian/CRUD_GOLANG/src/configuration/database/mongodb"
 	"github.com/Swampertian/CRUD_GOLANG/src/configuration/logger"
-	"github.com/Swampertian/CRUD_GOLANG/src/configuration/mongodb"
 	"github.com/Swampertian/CRUD_GOLANG/src/controller/routes"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
-	"log"
 )
 
 func main() {
@@ -27,7 +28,7 @@ func main() {
 	userController := initDependencies(database)
 
 	router := gin.Default()
-	routes.InitRoutes(&router.RouterGroup, UserController)
+	routes.InitRoutes(&router.RouterGroup, userController)
 	if err := router.Run(":8080"); err != nil {
 		log.Fatal(err)
 	}
